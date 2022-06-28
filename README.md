@@ -1,2 +1,2 @@
 # pd-dmtools
-Surtido de abstracciones básicas de audio y de control.
+Surtido de herramientas básicas de audio y de control, desarrolladas en Pure Data.
