@@ -1,0 +1,168 @@
+#N canvas 174 112 1366 685 12;
+#X obj 101 104 cnv 15 82 47 empty empty empty 20 12 0 14 #ffffff #404040
+0;
+#X obj 109 121 hsl 67 10 0 1 0 0 \$0-stom \$0-stom-r stereo->mono -2
+-8 0 10 #fc80c0 #fcfcfc #8080fc 0 0;
+#N canvas -8 -8 1366 685 help 0;
+#X obj 38 150 cnv 15 511 103 empty empty empty 20 12 0 14 #c4c4fc #404040
+0;
+#X obj 38 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4c4fc #404040
+0;
+#X obj 48 81 sig~;
+#X text 35 47 INLET 0:;
+#X obj 207 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4c4fc #404040
+0;
+#X obj 217 81 sig~;
+#X text 204 47 INLET 1:;
+#X text 35 126 INLET 2:;
+#X obj 578 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4fcfc #404040
+0;
+#X obj 588 81 sig~;
+#X obj 747 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4fcfc #404040
+0;
+#X obj 757 81 sig~;
+#X text 575 47 OUTLET 0:;
+#X text 744 47 OUTLET 1:;
+#X obj 48 166 float;
+#X text 88 81 canal izq.;
+#X text 257 81 canal der.;
+#X text 629 80 canal izq.;
+#X text 797 81 canal der.;
+#X obj 38 274 cnv 15 419 69 empty empty empty 20 12 0 14 #c4c4fc #404040
+0;
+#X obj 48 284 cnv 15 399 49 empty empty empty 20 12 0 14 #ffffff #404040
+0;
+#X text 95 159 mezcla entre la señal estéreo original y la mezcla
+mono de dicha señal (0-1 \, donde 0 corresponde a la imagen estéreo
+original y 1 a una imagen completamente mono);
+#X text 55 293 adicionalmente se puede dar el valor de la mezcla como
+argumento inicial del objeto \, por ejemplo [stom~ 0.3];
+#X msg 48 220 bypass \$1;
+#X text 122 213 ignora o no los efectos del objeto sobre la señal
+(distinto de cero y 0 respectivamente);
+#X connect 14 0 23 0;
+#X restore 15 14 pd help;
+#X obj 538 90 inlet;
+#N canvas 469 255 796 371 route-inlet-messages 0;
+#X obj 12 12 inlet;
+#X obj 13 249 r \$0-error;
+#X obj 13 273 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 135 167 s \$0-error;
+#X obj 225 32 loadbang;
+#X obj 73 114 != 0;
+#X msg 13 293 se recibió un mensaje desconocido;
+#X obj 12 61 route float bypass;
+#X msg 225 61 0;
+#X obj 73 138 s \$0-byp-r;
+#X obj 12 90 s \$0-stom-r;
+#X obj 13 322 print stom~;
+#X connect 0 0 7 0;
+#X connect 1 0 2 0;
+#X connect 2 0 6 0;
+#X connect 4 0 8 0;
+#X connect 5 0 9 0;
+#X connect 6 0 11 0;
+#X connect 7 0 10 0;
+#X connect 7 1 5 0;
+#X connect 7 2 3 0;
+#X connect 8 0 5 0;
+#X connect 8 0 10 0;
+#X restore 538 119 pd route-inlet-messages;
+#X obj 106 136 tgl 10 0 \$0-byp \$0-byp-r bypass 15 5 0 10 #ff80c0
+#ffffff #8080ff 0 1;
+#X obj 248 64 r \$0-byp;
+#X msg 248 93 \$1 1;
+#X obj 248 117 line~;
+#X obj 230 146 inlet~;
+#X obj 405 146 inlet~;
+#X obj 230 214 *~;
+#X obj 405 214 *~;
+#N canvas 604 162 450 300 stereo-mono 0;
+#X obj 36 11 inlet~;
+#X obj 148 11 inlet~;
+#X obj 92 50 +~;
+#X obj 36 250 outlet~;
+#X obj 148 250 outlet~;
+#X obj 92 201 *~;
+#X obj 148 201 *~;
+#X obj 36 201 *~;
+#X obj 92 74 *~ 0.5;
+#X obj 166 104 expr 1-$f1;
+#X msg 166 128 \$1 1;
+#X obj 166 152 line~;
+#X msg 110 128 \$1 1;
+#X obj 110 152 line~;
+#X obj 277 57 r \$0-byp;
+#X obj 277 216 switch~;
+#X obj 277 129 t b f;
+#X obj 277 177 f, f 5;
+#X obj 277 153 delay 2;
+#X msg 277 105 0;
+#X obj 277 81 sel 1 0, f 13;
+#X msg 321 177 1;
+#X obj 166 75 r \$0-stom;
+#X connect 0 0 2 0;
+#X connect 0 0 7 0;
+#X connect 1 0 2 1;
+#X connect 1 0 6 0;
+#X connect 2 0 8 0;
+#X connect 5 0 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 7 0 3 0;
+#X connect 8 0 5 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 6 1;
+#X connect 11 0 7 1;
+#X connect 12 0 13 0;
+#X connect 13 0 5 1;
+#X connect 14 0 20 0;
+#X connect 16 0 18 0;
+#X connect 16 1 17 1;
+#X connect 17 0 15 0;
+#X connect 18 0 17 0;
+#X connect 19 0 16 0;
+#X connect 20 0 19 0;
+#X connect 20 1 21 0;
+#X connect 21 0 15 0;
+#X connect 22 0 9 0;
+#X connect 22 0 12 0;
+#X restore 270 185 pd stereo-mono;
+#X obj 230 253 outlet~;
+#X obj 405 253 outlet~;
+#X obj 383 69 == 0;
+#X msg 383 93 \$1 1;
+#X obj 383 117 line~;
+#X obj 383 45 r \$0-byp;
+#X obj 270 214 *~;
+#X obj 365 214 *~;
+#X obj 589 193 loadbang;
+#X obj 589 217 delay 5;
+#X obj 589 241 f \$1;
+#X obj 589 265 s \$0-;
+#X connect 3 0 4 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 11 1;
+#X connect 8 0 12 1;
+#X connect 9 0 11 0;
+#X connect 9 0 13 0;
+#X connect 10 0 13 1;
+#X connect 10 0 12 0;
+#X connect 11 0 14 0;
+#X connect 12 0 15 0;
+#X connect 13 0 20 0;
+#X connect 13 1 21 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 18 0 21 1;
+#X connect 18 0 20 1;
+#X connect 19 0 16 0;
+#X connect 20 0 14 0;
+#X connect 21 0 15 0;
+#X connect 22 0 23 0;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
+#X coords 0 -1 1 1 84 55 2 100 100;

@@ -1,0 +1,47 @@
+#N canvas 822 195 450 300 12;
+#X obj 109 44 inlet~;
+#X obj 109 83 phasor~, f 17;
+#X obj 225 44 inlet;
+#X obj 109 165 -~;
+#X obj 127 112 +~, f 6;
+#X obj 127 136 wrap~;
+#X obj 109 189 +~;
+#X obj 166 44 inlet~;
+#X obj 109 213 *~ 2;
+#X obj 109 237 -~ 1;
+#X obj 109 261 outlet~;
+#N canvas -8 -8 1366 685 help 0;
+#X obj 38 150 cnv 15 483 49 empty empty empty 20 12 0 14 #c4c4fc #404040
+0;
+#X text 35 126 INLET 2:;
+#X obj 48 166 float;
+#X obj 38 71 cnv 15 169 39 empty empty empty 20 12 0 14 #c4c4fc #404040
+0;
+#X obj 48 81 sig~;
+#X text 35 47 INLET 0:;
+#X obj 218 71 cnv 15 211 39 empty empty empty 20 12 0 14 #c4c4fc #404040
+0;
+#X obj 228 81 sig~;
+#X text 215 47 INLET 1:;
+#X obj 610 71 cnv 15 135 39 empty empty empty 20 12 0 14 #c4fcfc #404040
+0;
+#X obj 620 81 sig~;
+#X text 607 47 OUTLET 0:;
+#X text 661 80 canal mono;
+#X text 88 81 frecuencia (hz);
+#X text 268 81 ancho del pulso (0-1);
+#X text 94 159 fase (0-1 correspondiendo a un círculo \, números
+negativos o mayores a 1 siendo redundantes);
+#X restore 12 14 pd help;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 1;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 1;
+#X connect 6 0 8 0;
+#X connect 7 0 4 1;
+#X connect 7 0 6 1;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
