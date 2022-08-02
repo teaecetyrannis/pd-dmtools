@@ -1,24 +1,24 @@
-#N canvas 174 112 1366 685 12;
-#X obj 101 104 cnv 15 82 47 empty empty empty 20 12 0 14 #ffffff #404040
-0;
+#N canvas 1027 35 336 708 12;
+#X obj 101 104 cnv 15 82 47 empty \$0-text empty 20 12 0 14 -262144
+-1 0;
 #X obj 109 121 hsl 67 10 0 1 0 0 \$0-stom \$0-stom-r stereo->mono -2
--8 0 10 #fc80c0 #fcfcfc #8080fc 0 0;
+-8 0 10 -1 -262144 -1 2640 0;
 #N canvas -8 -8 1366 685 help 0;
-#X obj 38 150 cnv 15 511 103 empty empty empty 20 12 0 14 #c4c4fc #404040
+#X obj 38 150 cnv 15 511 103 empty empty empty 20 12 0 14 -203904 -66577
 0;
-#X obj 38 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4c4fc #404040
+#X obj 38 71 cnv 15 134 39 empty empty empty 20 12 0 14 -203904 -66577
 0;
 #X obj 48 81 sig~;
 #X text 35 47 INLET 0:;
-#X obj 207 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4c4fc #404040
+#X obj 207 71 cnv 15 134 39 empty empty empty 20 12 0 14 -203904 -66577
 0;
 #X obj 217 81 sig~;
 #X text 204 47 INLET 1:;
 #X text 35 126 INLET 2:;
-#X obj 578 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4fcfc #404040
+#X obj 578 71 cnv 15 134 39 empty empty empty 20 12 0 14 -204800 -66577
 0;
 #X obj 588 81 sig~;
-#X obj 747 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4fcfc #404040
+#X obj 747 71 cnv 15 134 39 empty empty empty 20 12 0 14 -204800 -66577
 0;
 #X obj 757 81 sig~;
 #X text 575 47 OUTLET 0:;
@@ -28,9 +28,9 @@
 #X text 257 81 canal der.;
 #X text 629 80 canal izq.;
 #X text 797 81 canal der.;
-#X obj 38 274 cnv 15 419 69 empty empty empty 20 12 0 14 #c4c4fc #404040
+#X obj 38 274 cnv 15 419 69 empty empty empty 20 12 0 14 -203904 -66577
 0;
-#X obj 48 284 cnv 15 399 49 empty empty empty 20 12 0 14 #ffffff #404040
+#X obj 48 284 cnv 15 399 49 empty empty empty 20 12 0 14 -262144 -66577
 0;
 #X text 95 159 mezcla entre la señal estéreo original y la mezcla
 mono de dicha señal (0-1 \, donde 0 corresponde a la imagen estéreo
@@ -46,8 +46,8 @@ argumento inicial del objeto \, por ejemplo [stom~ 0.3];
 #N canvas 469 255 796 371 route-inlet-messages 0;
 #X obj 12 12 inlet;
 #X obj 13 249 r \$0-error;
-#X obj 13 273 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
+#X obj 13 273 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X obj 135 167 s \$0-error;
 #X obj 225 32 loadbang;
 #X obj 73 114 != 0;
@@ -69,8 +69,8 @@ argumento inicial del objeto \, por ejemplo [stom~ 0.3];
 #X connect 8 0 5 0;
 #X connect 8 0 10 0;
 #X restore 538 119 pd route-inlet-messages;
-#X obj 106 136 tgl 10 0 \$0-byp \$0-byp-r bypass 15 5 0 10 #ff80c0
-#ffffff #8080ff 0 1;
+#X obj 106 136 tgl 10 0 \$0-byp \$0-byp-r bypass 15 5 0 10 -1 -262144
+-1 0 1;
 #X obj 248 64 r \$0-byp;
 #X msg 248 93 \$1 1;
 #X obj 248 117 line~;

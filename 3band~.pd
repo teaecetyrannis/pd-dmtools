@@ -1,16 +1,16 @@
-#N canvas -8 -8 1366 685 12;
+#N canvas 914 35 449 708 12;
 #X obj 25 135 inlet~;
 #X obj 25 343 outlet~;
-#X obj 351 54 cnv 15 84 120 empty \$0-text empty 20 12 0 14 #ffffff
-#b0b0b0 0;
+#X obj 351 54 cnv 15 84 120 empty \$0-text empty 20 12 0 14 -262144
+-1 0;
 #X obj 361 79 nbx 5 15 0 1e+37 0 0 \$0-freq-low \$0-freq-low-r hz 59
-8 0 10 #fc80c0 #fcfcfc #8080fc 0 256;
+8 0 10 -1 -262144 -1 500 256;
 #X obj 361 119 nbx 5 15 0 1e+37 0 0 \$0-freq-hi \$0-freq-hi-r hz 59
-8 0 10 #fc80c0 #fcfcfc #8080fc 0 256;
-#X obj 355 59 cnv 15 15 15 empty \$0-text low 0 6 0 10 #fcfcfc #8080fc
-0;
+8 0 10 -1 -262144 -1 2000 256;
+#X obj 355 59 cnv 15 15 15 empty \$0-text low 0 6 0 10 -262144 -1 0
+;
 #X obj 377 59 nbx 3 15 -100 12 0 0 \$0-low-s \$0-low-r dB 42 8 0 10
-#fc80c0 #fcfcfc #8080fc 0 256;
+-1 -262144 -1 0 256;
 #X obj 479 274 dbtorms;
 #X obj 479 250 + 100;
 #X obj 563 274 dbtorms;
@@ -23,8 +23,8 @@
 #N canvas 354 230 796 371 route-inlet-messages 0;
 #X obj 12 12 inlet;
 #X obj 53 237 r \$0-error;
-#X obj 53 261 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
+#X obj 53 261 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X msg 303 61 0;
 #X obj 247 216 s \$0-error;
 #N canvas 676 0 681 676 state 0;
@@ -116,25 +116,25 @@ freq hi \$5;
 #X obj 654 298 s \$0-hi;
 #X obj 137 135 inlet~;
 #X obj 137 343 outlet~;
-#X obj 355 99 cnv 15 15 15 empty \$0-text mid 0 6 0 10 #fcfcfc #8080fc
-0;
+#X obj 355 99 cnv 15 15 15 empty \$0-text mid 0 6 0 10 -262144 -1 0
+;
 #X obj 377 99 nbx 3 15 -100 12 0 0 \$0-mid-s \$0-mid-r dB 42 8 0 10
-#fc80c0 #fcfcfc #8080fc 0 256;
-#X obj 358 139 cnv 15 15 15 empty \$0-text hi 0 6 0 10 #fcfcfc #8080fc
-0;
+-1 -262144 -1 0 256;
+#X obj 358 139 cnv 15 15 15 empty \$0-text hi 0 6 0 10 -262144 -1 0
+;
 #X obj 377 139 nbx 3 15 -100 12 0 0 \$0-hi-s \$0-hi-r dB 42 8 0 10
-#fc80c0 #fcfcfc #8080fc 0 256;
+-1 -262144 -1 0 256;
 #N canvas -8 -8 1366 685 help 0;
-#X obj 610 150 cnv 15 499 105 empty empty empty 20 12 0 14 #c4fcfc
-#404040 0;
+#X obj 610 150 cnv 15 499 105 empty empty empty 20 12 0 14 -204800
+-66577 0;
 #X msg 620 166 set foo;
-#X obj 38 150 cnv 15 511 217 empty empty empty 20 12 0 14 #c4c4fc #404040
+#X obj 38 150 cnv 15 511 217 empty empty empty 20 12 0 14 -203904 -66577
 0;
-#X obj 38 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4c4fc #404040
+#X obj 38 71 cnv 15 134 39 empty empty empty 20 12 0 14 -203904 -66577
 0;
 #X obj 48 81 sig~;
 #X text 35 47 INLET 0:;
-#X obj 207 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4c4fc #404040
+#X obj 207 71 cnv 15 134 39 empty empty empty 20 12 0 14 -203904 -66577
 0;
 #X obj 217 81 sig~;
 #X text 204 47 INLET 1:;
@@ -143,10 +143,10 @@ freq hi \$5;
 #X msg 48 189 mid \$1;
 #X msg 48 218 hi \$1;
 #X msg 48 276 freq hi \$1;
-#X obj 609 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4fcfc #404040
+#X obj 609 71 cnv 15 134 39 empty empty empty 20 12 0 14 -204800 -66577
 0;
 #X obj 619 81 sig~;
-#X obj 778 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4fcfc #404040
+#X obj 778 71 cnv 15 134 39 empty empty empty 20 12 0 14 -204800 -66577
 0;
 #X obj 788 81 sig~;
 #X text 606 47 OUTLET 0:;
@@ -288,8 +288,8 @@ antes de escribir en él);
 #X connect 20 1 21 0;
 #X connect 21 0 15 0;
 #X restore 60 184 pd 3bands;
-#X obj 358 159 tgl 10 0 \$0-byp \$0-byp-r bypass 15 5 0 10 #ff80c0
-#ffffff #8080ff 0 1;
+#X obj 358 159 tgl 10 0 \$0-byp \$0-byp-r bypass 15 5 0 10 -1 -262144
+-1 0 1;
 #X obj 172 314 *~;
 #X obj 60 314 *~;
 #X obj 190 285 line~;

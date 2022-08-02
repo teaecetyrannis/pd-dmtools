@@ -1,4 +1,4 @@
-#N canvas -8 -8 1366 685 12;
+#N canvas 914 35 449 708 12;
 #X obj 206 215 inlet~;
 #X obj 286 215 inlet~;
 #X obj 206 274 *~;
@@ -12,8 +12,8 @@
 #N canvas 469 255 796 371 route-inlet-messages 0;
 #X obj 12 12 inlet;
 #X obj 13 249 r \$0-error;
-#X obj 13 273 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
+#X obj 13 273 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X obj 135 167 s \$0-error;
 #X obj 12 90 s \$0-gain-r;
 #X obj 215 32 loadbang;
@@ -35,24 +35,24 @@
 #X connect 10 0 6 0;
 #X restore 661 122 pd route-inlet-messages;
 #N canvas -8 -8 1366 685 help 0;
-#X obj 579 150 cnv 15 499 105 empty empty empty 20 12 0 14 #c4fcfc
-#404040 0;
+#X obj 579 150 cnv 15 499 105 empty empty empty 20 12 0 14 -204800
+-66577 0;
 #X msg 589 166 set foo;
-#X obj 38 150 cnv 15 511 152 empty empty empty 20 12 0 14 #c4c4fc #404040
+#X obj 38 150 cnv 15 511 152 empty empty empty 20 12 0 14 -203904 -66577
 0;
-#X obj 38 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4c4fc #404040
+#X obj 38 71 cnv 15 134 39 empty empty empty 20 12 0 14 -203904 -66577
 0;
 #X obj 48 81 sig~;
 #X text 35 47 INLET 0:;
-#X obj 207 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4c4fc #404040
+#X obj 207 71 cnv 15 134 39 empty empty empty 20 12 0 14 -203904 -66577
 0;
 #X obj 217 81 sig~;
 #X text 204 47 INLET 1:;
 #X text 35 126 INLET 2:;
-#X obj 578 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4fcfc #404040
+#X obj 578 71 cnv 15 134 39 empty empty empty 20 12 0 14 -204800 -66577
 0;
 #X obj 588 81 sig~;
-#X obj 747 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4fcfc #404040
+#X obj 747 71 cnv 15 134 39 empty empty empty 20 12 0 14 -204800 -66577
 0;
 #X obj 757 81 sig~;
 #X text 575 47 OUTLET 0:;
@@ -73,14 +73,14 @@ correctamente formateados para ser enviados de vuelta a la abstracción
 la abstracción reciba el mensaje [state(] \, se guardará el estado
 actual de la abstracción (tener en cuenta que el mensaje se vaciará
 antes de escribir en él);
-#X obj 94 233 cnv 15 399 49 empty empty empty 20 12 0 14 #ffffff #404040
+#X obj 94 233 cnv 15 399 49 empty empty empty 20 12 0 14 -262144 -66577
 0;
 #X text 101 242 adicionalmente se puede dar el valor de ganancia como
 argumento inicial del objeto \, por ejemplo [dbgain~ -6];
 #X connect 17 0 23 0;
 #X restore 15 14 pd help;
-#X obj 663 264 loadbang;
-#X obj 663 312 f \$1;
+#X obj 663 286 loadbang;
+#X obj 663 311 f \$1;
 #X obj 663 336 s \$0-gain-r;
 #X msg 352 186 \$1 1;
 #X obj 352 215 line~;
@@ -90,13 +90,12 @@ argumento inicial del objeto \, por ejemplo [dbgain~ -6];
 #X obj 310 109 == 0;
 #X obj 264 46 t f f, f 7;
 #X msg 296 186 1 1;
-#X obj 663 288 delay 5;
-#X obj 101 104 cnv 15 60 40 empty empty empty 20 12 0 14 #ffffff #404040
-0;
-#X obj 106 109 nbx 3 15 -100 12 0 0 \$0-gain \$0-gain-r dB 40 8 0 10
-#fc80c0 #fcfcfc #8080fc 0 256;
-#X obj 106 129 tgl 10 0 \$0-byp \$0-byp-r bypass 15 5 0 10 #ff80c0
-#ffffff #8080ff 0 1;
+#X obj 101 105 cnv 15 60 40 empty \$0-text empty 20 12 0 14 -262144
+-1 0;
+#X obj 106 110 nbx 3 15 -100 12 0 0 \$0-gain \$0-gain-r dB 40 8 0 10
+-1 -262144 -1 0 256;
+#X obj 106 130 tgl 10 0 \$0-byp \$0-byp-r bypass 15 5 0 10 -1 -262144
+-1 0 1;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 4 0;
@@ -105,7 +104,7 @@ argumento inicial del objeto \, por ejemplo [dbgain~ -6];
 #X connect 7 0 15 0;
 #X connect 8 0 18 0;
 #X connect 9 0 10 0;
-#X connect 12 0 23 0;
+#X connect 12 0 13 0;
 #X connect 13 0 14 0;
 #X connect 15 0 16 0;
 #X connect 16 0 3 1;
@@ -118,5 +117,4 @@ argumento inicial del objeto \, por ejemplo [dbgain~ -6];
 #X connect 21 0 19 0;
 #X connect 21 1 20 0;
 #X connect 22 0 16 0;
-#X connect 23 0 13 0;
 #X coords 0 -1 1 1 62 48 2 100 100;

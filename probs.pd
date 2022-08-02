@@ -1,4 +1,4 @@
-#N canvas -8 -8 1366 685 12;
+#N canvas 914 35 449 708 12;
 #X obj 180 124 random 100;
 #X obj 344 44 inlet;
 #N canvas -8 -8 1366 685 route-inlet-messages 0;
@@ -48,18 +48,18 @@
 #X obj 198 148 r \$0-chance;
 #X obj 180 196 sel 1;
 #X obj 180 220 outlet;
-#X obj 101 104 cnv 15 61 25 empty empty empty 20 12 0 14 #fcfcfc #404040
-0;
+#X obj 101 104 cnv 15 61 25 empty \$0-text empty 20 12 0 14 -262144
+-1 0;
 #X obj 106 111 bng 10 250 50 0 \$0-randomize \$0-randomize-r empty
-17 7 0 10 #fc80c0 #fcfcfc #8080fc;
+17 7 0 10 -1 -262144 -1;
 #X obj 121 109 nbx 3 15 -1e+37 1e+37 0 0 \$0-chance \$0-chance-r empty
-0 -8 0 10 #fc80c0 #fcfcfc #8080fc 0 256;
+0 -8 0 10 -1 -262144 -1 0 256;
 #X obj 236 196 r \$0-state;
 #X obj 236 220 outlet;
 #N canvas -8 -8 1366 685 help 0;
-#X obj 38 71 cnv 15 447 68 empty empty empty 20 12 0 14 #c4c4fc #404040
+#X obj 38 71 cnv 15 447 68 empty empty empty 20 12 0 14 -203904 -66577
 0;
-#X obj 546 71 cnv 15 422 39 empty empty empty 20 12 0 14 #c4fcfc #404040
+#X obj 546 71 cnv 15 422 39 empty empty empty 20 12 0 14 -204800 -66577
 0;
 #X text 543 47 OUTLET 0:;
 #X text 35 47 INLET 0:;
@@ -71,9 +71,9 @@
 #X text 96 80 probabilidad (0-100%);
 #X text 87 103 genera un número random entre 0 y 100 y comprueba si
 se encuentra entre 0 y la probabilidad dada;
-#X obj 38 160 cnv 15 448 66 empty empty empty 20 12 0 14 #c7c6ff #404040
+#X obj 38 160 cnv 15 448 66 empty empty empty 20 12 0 14 -203904 -66577
 0;
-#X obj 48 170 cnv 15 428 46 empty empty empty 20 12 0 14 #ffffff #404040
+#X obj 48 170 cnv 15 428 46 empty empty empty 20 12 0 14 -262144 -66577
 0;
 #X text 56 176 adicionalmente \, se puede dar el valor de probabilidad
 como argumento inicial del objeto \, por ejemplo [probs 75];

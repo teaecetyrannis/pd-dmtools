@@ -1,4 +1,4 @@
-#N canvas -8 -8 1366 685 12;
+#N canvas 914 35 449 708 12;
 #X obj 286 312 line~;
 #X obj 286 288 pack f f, f 11;
 #X obj 545 116 inlet;
@@ -8,8 +8,8 @@
 #N canvas 668 184 796 371 route-inlet-messages 0;
 #X obj 12 12 inlet;
 #X obj 53 248 r \$0-error;
-#X obj 53 272 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
+#X obj 53 272 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X obj 205 227 s \$0-error;
 #N canvas 676 0 681 676 state 0;
 #X obj 66 30 inlet;
@@ -58,27 +58,27 @@
 #X obj 422 336 r \$0-state;
 #X obj 422 360 outlet;
 #X obj 286 172 inlet~;
-#X obj 101 104 cnv 15 105 52 empty empty empty 20 12 0 14 #fcfcfc #404040
-0;
+#X obj 101 104 cnv 15 105 52 \$0-text empty empty 20 12 0 14 -262144
+-66577 0;
 #X obj 106 121 nbx 4 15 0 9999 0 0 \$0-time \$0-time-r delay 0 -8 0
-10 #fc80c0 #fcfcfc #8080fc 0 256;
+10 -1 -262144 -1 0 256;
 #X obj 156 121 nbx 4 15 0 9999 0 0 \$0-lerp \$0-lerp-r interp. 0 -8
-0 10 #fc80c0 #fcfcfc #8080fc 0 256;
+0 10 -1 -262144 -1 0 256;
 #X obj 106 141 bng 10 250 50 0 \$0-clear \$0-clear-r clear 15 4 0 10
-#fc80c0 #fcfcfc #8080fc;
+-1 -262144 -1;
 #X obj 342 172 r \$0-clear;
 #X msg 342 196 clear;
 #N canvas -8 -8 1366 685 help 0;
-#X obj 545 150 cnv 15 499 105 empty empty empty 20 12 0 14 #c4fcfc
-#404040 0;
+#X obj 545 150 cnv 15 499 105 empty empty empty 20 12 0 14 -204800
+-66577 0;
 #X msg 555 166 set foo;
-#X obj 38 150 cnv 15 477 217 empty empty empty 20 12 0 14 #c4c4fc #404040
+#X obj 38 150 cnv 15 477 217 empty empty empty 20 12 0 14 -203904 -66577
 0;
-#X obj 38 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4c4fc #404040
+#X obj 38 71 cnv 15 134 39 empty empty empty 20 12 0 14 -203904 -66577
 0;
 #X obj 48 81 sig~;
 #X text 35 47 INLET 0:;
-#X obj 544 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4fcfc #404040
+#X obj 544 71 cnv 15 134 39 empty empty empty 20 12 0 14 -204800 -66577
 0;
 #X obj 554 81 sig~;
 #X text 541 47 OUTLET 0:;
@@ -101,7 +101,7 @@ antes de escribir en él);
 #X text 95 160 tiempo de delay (ms);
 #X text 108 189 tiempo de interpolación (ms);
 #X text 96 218 vaciar la línea de delay;
-#X obj 73 284 cnv 15 406 63 empty empty empty 20 12 0 14 #ffffff #404040
+#X obj 73 284 cnv 15 406 63 empty empty empty 20 12 0 14 -262144 -66577
 0;
 #X text 80 293 adicionalmente se pueden dar los tiempos de delay y
 de interpolación como argumentos iniciales del objeto \, por ejemplo

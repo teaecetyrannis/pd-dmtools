@@ -1,20 +1,19 @@
-#N canvas -8 -8 1366 685 12;
-#X obj 119 408 cnv 15 79 152 empty \$0-text empty 20 12 0 14 #fcfcfc
-#b0b0b0 0;
+#N canvas 914 35 449 708 12;
+#X obj 119 408 cnv 15 79 152 empty \$0-text empty 20 12 0 14 -262144
+-157568 0;
 #X obj 297 111 inlet~;
 #X obj 348 111 inlet~;
 #X obj 298 227 *~;
 #X obj 338 227 *~;
 #X obj 124 418 vsl 10 119 0 1 0 0 \$0-gain \$0-gain-r empty 0 -9 0
-10 #fc80c0 #fcfcfc #b0b0b0 0 1;
+10 -1 -262144 -1 11800 1;
 #X obj 316 140 r \$0-gain;
 #X msg 316 164 \$1 1;
 #X obj 316 188 line~;
-#X obj 124 545 tgl 10 0 \$0-mono \$0-mono-r mono 15 4 0 10 #fc80c0
-#fcfcfc #8080fc 0 1;
+#X obj 124 545 tgl 10 0 \$0-mono \$0-mono-r mono 15 4 0 10 -1 -262144
+-1 0 1;
 #X obj 379 227 r \$0-mono;
-#X obj 152 418 vu 10 120 empty empty -1 -8 0 12 #8080fc #8080fc 1 0
-;
+#X obj 152 418 vu 10 120 empty empty -1 -8 0 12 -262144 -1 1 0;
 #N canvas 329 161 625 417 vu 0;
 #X obj 59 129 env~ 1024;
 #X obj 161 111 abs~;
@@ -28,7 +27,7 @@
 #X text 344 307 Check the help file of env~ and slop~ for more details.
 , f 31;
 #X obj 239 89 expr 1000 / $f1;
-#X floatatom 239 117 5 0 0 0 - - - 0;
+#X floatatom 239 117 5 0 0 0 - - -;
 #X obj 161 146 slop~ 0 0 0 0 1e+09;
 #X text 359 89 convert to hz;
 #X text 282 118 hz;
@@ -58,8 +57,7 @@ need to convert the output to dB with rmstodb and also subtract by
 #X connect 19 0 20 0;
 #X connect 20 0 10 0;
 #X restore 156 354 pd vu;
-#X obj 140 418 vu 10 120 empty empty -1 -8 0 12 #8080fc #9c9c9c 0 0
-;
+#X obj 140 418 vu 10 120 empty empty -1 -8 0 12 -262144 -1 0 0;
 #N canvas 329 161 625 417 vu 0;
 #X obj 59 129 env~ 1024;
 #X obj 161 111 abs~;
@@ -73,7 +71,7 @@ need to convert the output to dB with rmstodb and also subtract by
 #X text 344 307 Check the help file of env~ and slop~ for more details.
 , f 31;
 #X obj 239 89 expr 1000 / $f1;
-#X floatatom 239 117 5 0 0 0 - - - 0;
+#X floatatom 239 117 5 0 0 0 - - -;
 #X obj 161 146 slop~ 0 0 0 0 1e+09;
 #X text 359 89 convert to hz;
 #X text 282 118 hz;
@@ -111,8 +109,8 @@ need to convert the output to dB with rmstodb and also subtract by
 #N canvas 354 230 796 371 route-inlet-messages 0;
 #X obj 12 12 inlet;
 #X obj 53 248 r \$0-error;
-#X obj 53 272 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
+#X obj 53 272 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X obj 163 227 s \$0-error;
 #N canvas 676 0 681 676 state 0;
 #X obj 66 30 inlet;
@@ -162,24 +160,24 @@ need to convert the output to dB with rmstodb and also subtract by
 #X connect 12 0 11 0;
 #X restore 454 116 pd route-inlet-messages;
 #N canvas -8 -8 1366 685 help 0;
-#X obj 611 150 cnv 15 499 105 empty empty empty 20 12 0 14 #c4fcfc
-#404040 0;
+#X obj 611 150 cnv 15 499 105 empty empty empty 20 12 0 14 -204800
+-66577 0;
 #X msg 621 166 set foo;
-#X obj 38 150 cnv 15 477 99 empty empty empty 20 12 0 14 #c4c4fc #404040
+#X obj 38 150 cnv 15 477 99 empty empty empty 20 12 0 14 -203904 -66577
 0;
-#X obj 38 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4c4fc #404040
+#X obj 38 71 cnv 15 134 39 empty empty empty 20 12 0 14 -203904 -66577
 0;
 #X obj 48 81 sig~;
 #X text 35 47 INLET 0:;
-#X obj 207 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4c4fc #404040
+#X obj 207 71 cnv 15 134 39 empty empty empty 20 12 0 14 -203904 -66577
 0;
 #X obj 217 81 sig~;
 #X text 204 47 INLET 1:;
 #X text 35 126 INLET 2:;
-#X obj 610 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4fcfc #404040
+#X obj 610 71 cnv 15 134 39 empty empty empty 20 12 0 14 -204800 -66577
 0;
 #X obj 620 81 sig~;
-#X obj 779 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4fcfc #404040
+#X obj 779 71 cnv 15 134 39 empty empty empty 20 12 0 14 -204800 -66577
 0;
 #X obj 789 81 sig~;
 #X text 607 47 OUTLET 0:;
